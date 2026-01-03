@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Play, Hexagon, Star, Flame, Monitor, Zap, ArrowRight, Volume2, Sparkles } from 'lucide-react';
+import { Play, Hexagon, Star, Monitor, Zap, ArrowRight, Volume2, Sparkles } from 'lucide-react';
 
 export default function LandingPage() {
   const containerRef = useRef(null);
@@ -23,16 +23,16 @@ export default function LandingPage() {
     <div ref={containerRef} className="bg-[#000] text-white selection:bg-yellow-500/30 overflow-x-hidden">
       
       {/* PROFESSIONAL CINEMA NAVIGATION */}
-      <nav className="fixed top-0 w-full z-[100] px-8 py-10 flex justify-between items-center pointer-events-none">
+      <nav className="fixed top-0 w-full z-[100] px-4 py-6 md:px-8 md:py-10 flex justify-between items-center pointer-events-none">
         <div className="flex items-center gap-3 pointer-events-auto">
-            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.3)] rotate-3 hover:rotate-0 transition-transform duration-500">
-                <Hexagon className="w-7 h-7 text-black fill-black" />
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.3)] rotate-3 hover:rotate-0 transition-transform duration-500">
+                <Hexagon className="w-6 h-6 md:w-7 md:h-7 text-black fill-black" />
             </div>
-            <span className="text-2xl font-black tracking-tighter uppercase italic">StreamHive</span>
+            <span className="text-xl md:text-2xl font-black tracking-tighter uppercase italic">StreamHive</span>
         </div>
         <div className="flex items-center gap-4 pointer-events-auto bg-white/5 backdrop-blur-2xl px-2 py-2 rounded-full border border-white/10">
-            <Link href="/login" className="px-6 py-2 text-xs font-black uppercase tracking-widest text-zinc-400 hover:text-white transition">Sign In</Link>
-            <Link href="/login" className="bg-yellow-500 text-black px-8 py-2 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 transition-all">
+            <Link href="/login" className="px-4 md:px-6 py-2 text-[10px] md:text-xs font-black uppercase tracking-widest text-zinc-400 hover:text-white transition">Sign In</Link>
+            <Link href="/login" className="bg-yellow-500 text-black px-4 md:px-8 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:scale-105 transition-all">
                 Access Now
             </Link>
         </div>
@@ -70,22 +70,22 @@ export default function LandingPage() {
                 <Sparkles className="w-3 h-3" /> The Gold Standard of Streaming
             </div>
             
-            <h1 className="text-6xl md:text-[11vw] font-black leading-[0.8] tracking-tighter uppercase italic mb-12">
+            <h1 className="text-4xl md:text-[11vw] font-black leading-[0.9] md:leading-[0.8] tracking-tighter uppercase italic mb-8 md:mb-12">
                 Pure <br /> 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-white to-orange-600">Emotion.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto font-bold uppercase tracking-widest leading-relaxed">
+            <p className="text-sm md:text-xl text-zinc-500 max-w-2xl mx-auto font-bold uppercase tracking-widest leading-relaxed">
                 Step beyond the interface. Experience a master-class in digital distribution. 
                 Your archive, perfectly preserved in the Hive.
             </p>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
-                <Link href="/login" className="group bg-white text-black h-20 px-12 rounded-3xl flex items-center gap-4 hover:bg-yellow-500 transition-all duration-500 font-black text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)]">
-                    <Play className="w-6 h-6 fill-black" />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12">
+                <Link href="/login" className="group bg-white text-black h-16 md:h-20 px-8 md:px-12 rounded-3xl flex items-center gap-4 hover:bg-yellow-500 transition-all duration-500 font-black text-lg md:text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)]">
+                    <Play className="w-5 h-5 md:w-6 md:h-6 fill-black" />
                     Open Portal
                 </Link>
-                <button className="h-20 px-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center gap-3 font-bold hover:bg-white/10 transition-all text-zinc-400">
+                <button className="h-16 md:h-20 px-8 md:px-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center gap-3 font-bold hover:bg-white/10 transition-all text-zinc-400 text-sm md:text-base">
                     <Volume2 className="w-5 h-5" /> Audio Engine v2
                 </button>
             </div>
@@ -93,10 +93,10 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 2: GENRE SPOTLIGHT (SCROLL-TRIGGERED) */}
-      <section className="py-40 px-8 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div className="space-y-10">
-                  <h2 className="text-6xl md:text-8xl font-black italic tracking-tighter uppercase leading-none">
+      <section className="py-20 px-4 md:py-40 md:px-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
+              <div className="space-y-6 md:space-y-10">
+                  <h2 className="text-4xl md:text-8xl font-black italic tracking-tighter uppercase leading-none">
                     Choose <br /> Your <br /> <span className="text-yellow-500">Vibe.</span>
                   </h2>
                   <p className="text-xl text-zinc-500 font-medium leading-relaxed max-w-md">
@@ -125,9 +125,9 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 3: THE EXPERIENCE (ICONIC LAYOUT) */}
-      <section className="py-40 bg-zinc-950/50">
-          <div className="px-8 text-center mb-24">
-              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">Built for <span className="italic underline decoration-yellow-500 underline-offset-8">Screen-Time.</span></h2>
+      <section className="py-20 md:py-40 bg-zinc-950/50">
+          <div className="px-4 md:px-8 text-center mb-12 md:mb-24">
+              <h2 className="text-3xl md:text-7xl font-black uppercase tracking-tighter mb-4 md:mb-6">Built for <span className="italic underline decoration-yellow-500 underline-offset-8">Screen-Time.</span></h2>
               <p className="text-zinc-500 font-medium uppercase tracking-widest text-xs">Unmatched Fidelity. Unparalleled Speed.</p>
           </div>
 
@@ -151,22 +151,22 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION 4: THE BIG CTA */}
-      <section className="h-screen flex items-center justify-center relative overflow-hidden px-8">
+      <section className="h-screen flex items-center justify-center relative overflow-hidden px-4 md:px-8">
           <div className="absolute inset-0 opacity-10">
               <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600" className="w-full h-full object-cover" />
           </div>
-          <div className="relative z-10 text-center space-y-12 px-4">
-              <h2 className="text-5xl md:text-8xl lg:text-[10vw] font-black uppercase italic tracking-tighter leading-[0.9]">
+          <div className="relative z-10 text-center space-y-8 md:space-y-12 px-4">
+              <h2 className="text-3xl md:text-8xl lg:text-[10vw] font-black uppercase italic tracking-tighter leading-[0.9]">
                 Stop Browsing. <br /> <span className="text-yellow-500">Start Watching.</span>
               </h2>
-              <Link href="/login" className="inline-flex items-center gap-6 bg-yellow-500 text-black px-10 md:px-16 py-6 md:py-8 rounded-full font-black text-xl md:text-3xl hover:scale-110 transition-transform shadow-[0_30px_100px_rgba(234,179,8,0.2)]">
-                  ENTER THE HIVE <ArrowRight className="w-8 h-8 md:w-10 md:h-10" />
+              <Link href="/login" className="inline-flex items-center gap-4 md:gap-6 bg-yellow-500 text-black px-8 md:px-16 py-4 md:py-8 rounded-full font-black text-lg md:text-3xl hover:scale-110 transition-transform shadow-[0_30px_100px_rgba(234,179,8,0.2)]">
+                  ENTER THE HIVE <ArrowRight className="w-6 h-6 md:w-10 md:h-10" />
               </Link>
           </div>
       </section>
 
       {/* FOOTER: THE STUDIO SIGNATURE */}
-      <footer className="py-20 px-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-12">
+      <footer className="py-10 px-4 md:py-20 md:px-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
           <div className="flex items-center gap-4">
               <Hexagon className="w-8 h-8 text-yellow-500" />
               <div className="text-left">
@@ -186,7 +186,13 @@ export default function LandingPage() {
   );
 }
 
-function GenreCard({ label, color, i }: any) {
+interface GenreCardProps {
+  label: string;
+  color: string;
+  i: number;
+}
+
+function GenreCard({ label, color, i }: GenreCardProps) {
     return (
         <motion.div 
             whileHover={{ y: -10 }}
@@ -199,7 +205,13 @@ function GenreCard({ label, color, i }: any) {
     );
 }
 
-function FeatureBox({ icon, title, desc }: any) {
+interface FeatureBoxProps {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}
+
+function FeatureBox({ icon, title, desc }: FeatureBoxProps) {
     return (
         <div className="p-16 border-r border-white/5 last:border-none flex flex-col items-center text-center gap-8 group hover:bg-white/[0.02] transition-colors">
             <div className="text-yellow-500 group-hover:scale-110 transition-transform duration-500">{icon}</div>

@@ -32,8 +32,8 @@ const Hero = ({ video }: HeroProps) => {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="absolute bottom-20 left-12 md:left-24 max-w-2xl z-10">
-        <div className="flex items-center gap-3 mb-6">
+      <div className="absolute bottom-10 md:bottom-20 left-4 md:left-24 max-w-2xl z-10">
+        <div className="flex items-center gap-3 mb-4 md:mb-6">
             <span className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest text-white/80 border border-white/5">
                 Featured
             </span>
@@ -42,23 +42,23 @@ const Hero = ({ video }: HeroProps) => {
             </span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
+        <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight tracking-tight">
           {video.title}
         </h1>
         
-        <p className="text-zinc-400 text-sm md:text-base mb-10 line-clamp-2 max-w-xl font-medium leading-relaxed">
+        <p className="text-zinc-400 text-sm md:text-base mb-6 md:mb-10 line-clamp-2 max-w-xl font-medium leading-relaxed">
           {video.description}
         </p>
 
         <div className="flex items-center gap-3">
           <Link 
             href={`/watch/${video._id}`}
-            className="bg-white text-black px-8 py-3.5 rounded-md flex items-center gap-3 hover:bg-zinc-200 transition-all font-semibold text-sm"
+            className="bg-white text-black px-5 md:px-8 py-3 md:py-3.5 rounded-md flex items-center gap-3 hover:bg-zinc-200 transition-all font-semibold text-sm"
           >
             <Play className="w-4 h-4 fill-black" />
             Play
           </Link>
-          <button className="bg-white/10 backdrop-blur-md text-white px-8 py-3.5 rounded-md flex items-center gap-3 hover:bg-white/20 transition-all font-semibold text-sm border border-white/5">
+          <button className="bg-white/10 backdrop-blur-md text-white px-5 md:px-8 py-3 md:py-3.5 rounded-md flex items-center gap-3 hover:bg-white/20 transition-all font-semibold text-sm border border-white/5">
             <Info className="w-4 h-4" />
             More Info
           </button>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { 
   Home, Search, PlayCircle, Plus, 
-  User, Settings, LogOut, Upload,
+  LogOut, Upload,
   LayoutGrid, Languages
 } from 'lucide-react';
 
@@ -24,7 +24,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-[70px] hover:w-[240px] bg-black border-r border-white/5 z-[100] transition-all duration-300 group flex flex-col items-center py-10 overflow-hidden">
+    <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[70px] hover:w-[240px] bg-black border-r border-white/5 z-[100] transition-all duration-300 group flex-col items-center py-10 overflow-hidden">
       {/* Mini Logo */}
       <div className="mb-12">
         <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">

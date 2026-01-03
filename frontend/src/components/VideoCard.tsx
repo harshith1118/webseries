@@ -16,7 +16,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
     : `${API_BASE_URL}${video.thumbnailUrl}`;
 
   return (
-    <div className="group relative min-w-[300px] h-[170px] transition-all duration-300">
+    <div className="group relative min-w-[250px] md:min-w-[300px] h-[140px] md:h-[170px] transition-all duration-300">
       <Link href={`/watch/${video._id}`} className="block w-full h-full relative rounded-md overflow-hidden bg-zinc-900 border border-white/5">
         <Image
             src={thumbnailUrl}

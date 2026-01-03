@@ -6,7 +6,7 @@ import Hero from '@/components/Hero';
 import VideoCard from '@/components/VideoCard';
 import { videoService } from '@/services/video.service';
 import { Video } from '@/types';
-import { Sparkles, LayoutGrid, Languages, Film, PlayCircle } from 'lucide-react';
+import { LayoutGrid, Languages, Film, PlayCircle } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import LandingPage from './landing/page';
 import Link from 'next/link';
@@ -40,10 +40,10 @@ export default function RootPage() {
     <div className="flex bg-black min-h-screen text-white">
       <Sidebar />
       
-      <main className="flex-1 ml-[70px] transition-all duration-300">
+      <main className="flex-1 ml-0 md:ml-[70px] transition-all duration-300">
         <Hero video={featuredVideo} />
 
-        <div className="px-12 py-16 space-y-20 relative z-10 -mt-20">
+        <div className="px-4 md:px-12 py-8 md:py-16 space-y-10 md:space-y-20 relative z-10 -mt-10 md:-mt-20">
             {/* Trending Section */}
             <section>
                 <div className="flex items-center gap-3 mb-6">
@@ -76,7 +76,7 @@ export default function RootPage() {
             </section>
 
             {/* Language Section */}
-            <section className="bg-zinc-900/20 p-12 rounded-2xl border border-white/5">
+            <section className="bg-zinc-900/20 p-6 md:p-12 rounded-2xl border border-white/5">
                 <div className="flex items-center gap-3 mb-8">
                     <Languages className="w-4 h-4 text-zinc-500" />
                     <h2 className="section-title mb-0">Stories in Your Language</h2>
@@ -103,7 +103,7 @@ export default function RootPage() {
         </div>
 
         {/* Footer */}
-        <footer className="px-12 py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 opacity-40">
+        <footer className="px-6 md:px-12 py-10 md:py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 opacity-40">
             <div className="flex items-center gap-2">
                 <PlayCircle className="w-5 h-5" />
                 <span className="text-xs font-bold uppercase tracking-[0.3em]">StreamHive Global</span>
