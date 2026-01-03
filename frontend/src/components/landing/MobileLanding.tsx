@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Play, Hexagon, Layers, Zap, ArrowRight, Globe, Film } from 'lucide-react';
 
@@ -31,7 +32,12 @@ export default function MobileLanding() {
       {/* 2. HERO STORY (Snapchat/Reels Style) */}
       <section className="h-[85vh] relative rounded-b-[3rem] overflow-hidden bg-zinc-900 border-b border-white/5">
         <div className="absolute inset-0">
-             <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop" className="w-full h-full object-cover opacity-60" alt="Hero Background" />
+             <Image 
+                src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop" 
+                fill
+                className="object-cover opacity-60" 
+                alt="Hero Background" 
+             />
              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
         </div>
         
@@ -116,7 +122,7 @@ interface MobileCardProps {
 function MobileCard({ title, subtitle, img }: MobileCardProps) {
     return (
         <div className="min-w-[200px] aspect-[3/4] rounded-2xl overflow-hidden relative group">
-            <img src={img} className="w-full h-full object-cover" alt={title} />
+            <Image src={img} fill className="object-cover" alt={title} />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4">
                 <p className="text-[10px] font-bold text-yellow-500 uppercase tracking-widest mb-1">{subtitle}</p>

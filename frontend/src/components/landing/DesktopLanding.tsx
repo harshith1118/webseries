@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Play, Hexagon, Star, Monitor, Zap, ArrowRight, Volume2, Sparkles } from 'lucide-react';
 
@@ -48,9 +49,11 @@ export default function DesktopLanding() {
             <div className="grid grid-cols-6 gap-4 p-4">
                 {[...Array(24)].map((_, i) => (
                     <div key={i} className="aspect-[2/3] relative rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-white/5">
-                        <img 
+                        <Image 
                             src={`https://images.unsplash.com/photo-${1500000000000 + (i * 100000)}?q=80&w=400&auto=format&fit=crop`} 
-                            className="w-full h-full object-cover" 
+                            fill
+                            sizes="(max-width: 768px) 50vw, 16vw"
+                            className="object-cover" 
                             alt="cinema"
                         />
                     </div>
@@ -153,7 +156,7 @@ export default function DesktopLanding() {
       {/* SECTION 4: THE BIG CTA */}
       <section className="h-screen flex items-center justify-center relative overflow-hidden px-8">
           <div className="absolute inset-0 opacity-10">
-              <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600" className="w-full h-full object-cover" alt="Background Cinematic" />
+              <Image src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600" fill className="object-cover" alt="Background Cinematic" />
           </div>
           <div className="relative z-10 text-center space-y-12 px-4">
               <h2 className="text-8xl lg:text-[10vw] font-black uppercase italic tracking-tighter leading-[0.9]">
