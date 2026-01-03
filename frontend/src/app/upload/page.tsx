@@ -46,8 +46,9 @@ export default function UploadPage() {
       await videoService.uploadVideo(formData);
       setSuccess(true);
       setTimeout(() => router.push('/'), 2000);
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Upload failed');
+    } catch (err: unknown) {
+      const axiosError = err as { response?: { data?: { message?: string } } };
+      setError(axiosError.response?.data?.message || 'Upload failed');
     } finally {
       setUploading(false);
     }
@@ -117,6 +118,12 @@ export default function UploadPage() {
                                     <p className="text-gray-500 text-xs mt-2">Support for MP4, MKV, MOV (Max 500MB)</p>
                                 </div>
                             </div>
+
+                            {error && (
+                                <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-xl text-center">
+                                    <p className="text-red-500 text-sm font-medium">{error}</p>
+                                </div>
+                            )}
 
                             <button
                                 type="submit"

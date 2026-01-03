@@ -24,8 +24,9 @@ export default function ForgotPasswordPage() {
       if (res.data.resetToken) {
         setToken(res.data.resetToken);
       }
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Something went wrong');
+    } catch (err: unknown) {
+      const axiosError = err as { response?: { data?: { message?: string } } };
+      setError(axiosError.response?.data?.message || 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -40,7 +41,7 @@ export default function ForgotPasswordPage() {
         </Link>
 
         <h1 className="text-3xl font-bold text-white mb-2">Reset Password</h1>
-        <p className="text-gray-400 mb-8">Enter your email and we'll help you get back into your account.</p>
+        <p className="text-gray-400 mb-8">Enter your email and we&apos;ll help you get back into your account.</p>
 
         {success ? (
           <div className="space-y-6">
@@ -48,7 +49,7 @@ export default function ForgotPasswordPage() {
                 <CheckCircle className="text-yellow-500 w-12 h-12" />
                 <div>
                     <h3 className="text-white font-bold text-lg mb-2">Request Verified</h3>
-                    <p className="text-zinc-400 text-sm">We've authorized a secure password reset for your account. Please follow the secure link below to update your credentials.</p>
+                    <p className="text-zinc-400 text-sm">We&apos;ve authorized a secure password reset for your account. Please follow the secure link below to update your credentials.</p>
                 </div>
                 <Link 
                     href={`/reset-password/${token}`}

@@ -29,8 +29,9 @@ export default function LoginPage() {
         await register(username, email, password);
       }
       router.push('/');
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Authentication failed');
+    } catch (err: unknown) {
+      const axiosError = err as { response?: { data?: { message?: string } } };
+      setError(axiosError.response?.data?.message || 'Authentication failed');
     } finally {
       setLoading(false);
     }

@@ -2,17 +2,18 @@
 
 import { useEffect, useRef } from 'react';
 import videojs from 'video.js';
+import Player from 'video.js/dist/types/player';
 import 'video.js/dist/video-js.css';
 
 interface VideoPlayerProps {
-  options: any;
-  onReady?: (player: any) => void;
+  options: Record<string, unknown>;
+  onReady?: (player: Player) => void;
   onTimeUpdate?: (currentTime: number) => void;
 }
 
 export const VideoPlayer = ({ options, onReady, onTimeUpdate }: VideoPlayerProps) => {
   const videoRef = useRef<HTMLDivElement | null>(null);
-  const playerRef = useRef<any | null>(null);
+  const playerRef = useRef<Player | null>(null);
 
   useEffect(() => {
     // Make sure Video.js player is only initialized once
@@ -26,7 +27,7 @@ export const VideoPlayer = ({ options, onReady, onTimeUpdate }: VideoPlayerProps
       }
 
       const player = (playerRef.current = videojs(videoElement, options, () => {
-        onReady && onReady(player);
+        if (onReady) onReady(player);
       }));
 
       player.on('timeupdate', () => {
@@ -37,8 +38,8 @@ export const VideoPlayer = ({ options, onReady, onTimeUpdate }: VideoPlayerProps
       });
     } else {
       const player = playerRef.current;
-      player.autoplay(options.autoplay);
-      player.src(options.sources);
+      if (options.autoplay) player.autoplay(options.autoplay as boolean);
+      if (options.sources) player.src(options.sources as string);
     }
   }, [options, videoRef, onReady, onTimeUpdate]);
 

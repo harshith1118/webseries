@@ -29,8 +29,9 @@ export default function ResetPasswordPage({ params }: { params: Promise<{ token:
       await api.put(`/auth/resetpassword/${resolvedParams.token}`, { password });
       setSuccess(true);
       setTimeout(() => router.push('/login'), 3000);
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Token is invalid or has expired');
+    } catch (err: unknown) {
+      const axiosError = err as { response?: { data?: { message?: string } } };
+      setError(axiosError.response?.data?.message || 'Token is invalid or has expired');
     } finally {
       setLoading(false);
     }

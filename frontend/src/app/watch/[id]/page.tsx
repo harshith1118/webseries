@@ -19,8 +19,8 @@ export default function WatchPage({ params }: { params: Promise<{ id: string }> 
       try {
         const data = await videoService.getVideoById(resolvedParams.id);
         setVideo(data);
-      } catch (err) {
-        console.error('Failed to fetch video:', err);
+      } catch {
+        console.error('Failed to fetch video');
       } finally {
         setLoading(false);
       }
@@ -37,7 +37,7 @@ export default function WatchPage({ params }: { params: Promise<{ id: string }> 
                 videoId: resolvedParams.id,
                 progress: Math.floor(currentTime)
             });
-        } catch (err) {
+        } catch {
             // Silently fail progress tracking
         }
     }

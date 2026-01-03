@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Play, Plus, ChevronDown } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { Video } from '@/types';
 
 interface VideoCardProps {
