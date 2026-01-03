@@ -70,7 +70,7 @@ const Navbar = () => {
                   </Link>
                 )}
                 
-                <div className="group relative">
+                <div className="hidden md:block group relative">
                   <button className="flex items-center gap-2 p-1 rounded-full border border-white/10 hover:bg-white/5 transition">
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-cyan-400 flex items-center justify-center text-white font-bold text-xs">
                           {user.username[0].toUpperCase()}
@@ -148,12 +148,20 @@ const Navbar = () => {
                         <Upload className="w-5 h-5" /> Creator Studio
                     </Link>
                  )}
-                 <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="w-full flex items-center gap-4 p-3 rounded-xl hover:bg-red-500/10 text-red-400 transition text-left">
-                    <LogOut className="w-5 h-5" /> Sign Out
-                 </button>
               </div>
             )}
           </div>
+
+          {user && (
+            <div className="mt-auto pt-6 border-t border-white/10">
+               <button 
+                  onClick={() => { logout(); setIsMobileMenuOpen(false); }} 
+                  className="w-full flex items-center gap-4 p-4 rounded-2xl bg-red-500/10 text-red-400 hover:bg-red-500/20 transition text-left font-bold"
+               >
+                  <LogOut className="w-5 h-5" /> Sign Out
+               </button>
+            </div>
+          )}
         </div>
       </div>
     </>

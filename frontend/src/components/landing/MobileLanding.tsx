@@ -72,7 +72,7 @@ export default function MobileLanding() {
           </h2>
           
           <div className="flex gap-4 overflow-x-auto pr-6 no-scrollbar pb-8">
-              <MobileCard title="Cyberpunk" subtitle="Trending Now" img="https://images.unsplash.com/photo-1533972724312-6eaf2749b300?q=80&w=400" />
+              <MobileCard title="Cyberpunk" subtitle="Trending Now" img="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=400" />
               <MobileCard title="Deep Space" subtitle="Sci-Fi" img="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400" />
               <MobileCard title="Neon City" subtitle="Action" img="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=400" />
           </div>
