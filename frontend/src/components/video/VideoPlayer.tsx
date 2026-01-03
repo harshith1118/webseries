@@ -31,7 +31,8 @@ export const VideoPlayer = ({ options, onReady, onTimeUpdate }: VideoPlayerProps
 
       player.on('timeupdate', () => {
         if (onTimeUpdate) {
-          onTimeUpdate(player.currentTime());
+          const current = player.currentTime();
+          onTimeUpdate(typeof current === 'number' ? current : 0);
         }
       });
     } else {
