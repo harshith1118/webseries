@@ -1,0 +1,28 @@
+🚀 STREAMHIVE - ENGINEERING MILESTONES & SYSTEM ARCHITECTURE
+
+1. CORE BACKEND ENGINE (Node.js & TypeScript)
+--------------------------------------------------
+✅ Architected a scalable Express.js server with TypeScript for type-safe middleware and API routing.
+✅ Integrated MongoDB Atlas as the primary data store with specialized schemas for users and media.
+✅ Implemented JWT-based stateless authentication with secure Bcrypt password hashing.
+✅ Developed an HLS Transcoding Pipeline using FFmpeg to support adaptive bitrate streaming.
+✅ Engineered an automated Thumbnail Extraction service to enhance content discovery.
+
+2. FRONTEND PLATFORM (Next.js & Tailwind CSS)
+--------------------------------------------------
+✅ Built a custom AuthProvider to manage global user sessions and secure route persistence.
+✅ Designed an immersive, cinema-grade UI with advanced CSS animations and layout systems.
+✅ Developed a high-performance Video Player using Video.js with full HLS support.
+✅ Created a 'Creator Studio' for admin-level content management and direct file publishing.
+✅ Optimized for Fluid UX with smooth scroll-driven animations and glassmorphism UI elements.
+
+3. KEY SYSTEM FEATURES
+--------------------------------------------------
+✅ Adaptive Playback: Videos automatically adjust quality based on user network speed.
+✅ Content Discovery: Organized browsing by genres, languages, and trending metrics.
+✅ User Personalization: Secure watch history tracking and "Continue Watching" functionality.
+✅ Search & Discovery: Minimalist global search interface for rapid library navigation.
+
+Developed by: Dharshith
+Project Path: C:\Users\Lenovo\Desktop\netflixpro
+Status: Production Ready

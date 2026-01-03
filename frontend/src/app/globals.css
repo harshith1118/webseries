@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --surface: #0a0a0b;
+  --surface-bright: #141415;
+  --primary: #ffffff;
+  --secondary: #a1a1aa;
+  --accent: #6d28d9; /* Deep Violet */
+  --glass: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+@layer components {
+  .ott-sidebar-item {
+    @apply flex items-center gap-4 px-4 py-3 rounded-lg transition-all duration-300 text-secondary hover:text-white hover:bg-glass;
+  }
+  
+  .ott-sidebar-item.active {
+    @apply text-white bg-glass border-l-2 border-accent;
+  }
+
+  .ott-card-container {
+    @apply relative overflow-hidden rounded-md transition-all duration-500 hover:scale-105 hover:z-10 cursor-pointer shadow-2xl;
+  }
+
+  .glass-blur {
+    @apply backdrop-blur-2xl bg-black/40 border border-white/5;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-secondary tracking-tight mb-4 uppercase text-[11px] tracking-[0.2em];
+  }
+}
+
+/* Custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-bright);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

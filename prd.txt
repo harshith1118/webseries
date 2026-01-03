@@ -1,0 +1,39 @@
+📄 PRODUCT REQUIREMENTS DOCUMENT (PRD) - StreamHive
+
+1. Vision
+Build a premium OTT streaming platform that delivers a theatrical experience on the web. Designed for high-end content distribution with a focus on speed, adaptive quality, and modern aesthetics.
+
+2. Problem Statement
+Existing video platforms are often generic and lack the "Cinema-First" design required by high-end creators and niche organizations. StreamHive solves this by providing a professional, self-hosted streaming ecosystem.
+
+3. Key Goals
+- Deliver zero-buffer adaptive bitrate streaming via HLS.
+- Provide a cinematic, high-standard UI/UX.
+- Enable robust content management for admins.
+- Ensure cross-device compatibility (Web, mobile-responsive).
+
+4. Target Users
+- Viewers: Seeking a distraction-free, high-quality streaming experience.
+- Admins/Creators: Managing libraries, uploading content, and monitoring views.
+
+5. Technical Requirements
+- Frontend: Next.js (App Router), Tailwind CSS, Framer Motion.
+- Backend: Node.js, Express, TypeScript.
+- Database: MongoDB.
+- Video Engine: FFmpeg (HLS Transcoding).
+- Authentication: JSON Web Tokens (JWT).
+
+6. Core Features
+- Secure Authentication: Sign up, Login, and Password Reset flows.
+- Cinema Discovery: Hero features, genre grids, and language-based rows.
+- Advanced Player: HLS playback with adaptive quality switching.
+- Creator Studio: Admin dashboard for video publishing and metadata management.
+- Watch Progress: Track history and resume videos seamlessly.
+
+7. UX Principles
+- Content-First Layout.
+- Cinema-Gold Aesthetic.
+- Fluid Micro-interactions.
+- Professional Navigation Standards.
+
+Project Lead: Dharshith
