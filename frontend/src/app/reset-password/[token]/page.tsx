@@ -38,7 +38,7 @@ export default function ResetPasswordPage({ params }: { params: Promise<{ token:
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-[#111] p-8 rounded-2xl border border-gray-800 shadow-2xl">
+      <div className="w-full max-w-md bg-[#111] p-6 md:p-8 rounded-2xl border border-gray-800 shadow-2xl">
         <h1 className="text-3xl font-bold text-white mb-2">New Password</h1>
         <p className="text-gray-400 mb-8">Create a new, strong password for your account.</p>
 

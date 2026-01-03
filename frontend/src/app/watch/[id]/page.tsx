@@ -66,7 +66,7 @@ export default function WatchPage({ params }: { params: Promise<{ id: string }> 
     <div className="h-screen w-screen bg-black">
       <nav className="fixed top-0 w-full p-4 z-50 flex items-center gap-8 bg-gradient-to-b from-black/70 to-transparent">
         <ArrowLeft 
-            className="w-8 h-8 text-white cursor-pointer hover:scale-110 transition" 
+            className="w-6 h-6 md:w-8 md:h-8 text-white cursor-pointer hover:scale-110 transition" 
             onClick={() => router.back()}
         />
         <p className="text-white text-xl md:text-3xl font-bold">

@@ -37,7 +37,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#000] flex flex-col items-center justify-center relative overflow-hidden p-6">
+    <div className="min-h-screen w-full bg-[#000] flex flex-col items-center justify-center relative overflow-hidden p-4 md:p-6">
       
       {/* Background Aesthetic: Blurred Infinity Wall */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none grayscale blur-md scale-110">
@@ -53,7 +53,7 @@ export default function LoginPage() {
       <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-orange-600/10 blur-[150px] rounded-full" />
 
       {/* Simple Top Logo */}
-      <Link href="/" className="absolute top-16 flex items-center gap-4 group z-20">
+      <Link href="/" className="absolute top-8 md:top-16 flex items-center gap-4 group z-20">
           <div className="bg-yellow-500 p-2.5 rounded-2xl shadow-[0_0_30px_rgba(234,179,8,0.4)] group-hover:rotate-12 transition-transform duration-500">
              <Hexagon className="w-8 h-8 text-black fill-black" />
           </div>
@@ -61,8 +61,8 @@ export default function LoginPage() {
       </Link>
 
       {/* Login Portal: High-Standard UX */}
-      <div className="w-full max-w-[460px] relative z-10 mt-20">
-          <div className="bg-zinc-950/80 backdrop-blur-3xl border border-white/5 rounded-[3rem] p-10 md:p-14 shadow-2xl relative overflow-hidden">
+      <div className="w-full max-w-[460px] relative z-10 mt-16 md:mt-20">
+          <div className="bg-zinc-950/80 backdrop-blur-3xl border border-white/5 rounded-[2rem] md:rounded-[3rem] p-6 md:p-14 shadow-2xl relative overflow-hidden">
             {/* Top Accent Line */}
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-yellow-500 to-transparent" />
             

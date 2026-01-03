@@ -20,7 +20,9 @@ export default function LandingPage() {
   const heroOpacity = useTransform(smoothProgress, [0, 0.15], [1, 0]);
 
   return (
-    <div ref={containerRef} className="bg-[#000] text-white selection:bg-yellow-500/30 overflow-x-hidden">
+    <div ref={containerRef} className="bg-[#000] text-white selection:bg-yellow-500/30 overflow-x-hidden relative">
+      {/* Mobile Ambient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/10 via-transparent to-yellow-900/5 pointer-events-none md:hidden" />
       
       {/* PROFESSIONAL CINEMA NAVIGATION */}
       <nav className="fixed top-0 w-full z-[100] px-4 py-6 md:px-8 md:py-10 flex justify-between items-center pointer-events-none">
@@ -43,9 +45,9 @@ export default function LandingPage() {
         {/* MOVING POSTER WALL */}
         <motion.div 
             style={{ y: wallY }}
-            className="absolute inset-0 z-0 opacity-30 scale-110"
+            className="absolute inset-0 z-0 opacity-40 md:opacity-30 scale-110"
         >
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 p-4">
                 {[...Array(24)].map((_, i) => (
                     <div key={i} className="aspect-[2/3] relative rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-white/5">
                         <img 
@@ -59,7 +61,7 @@ export default function LandingPage() {
         </motion.div>
 
         {/* GRADIENT OVERLAYS */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-1" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 md:via-black/60 to-transparent z-1" />
         <div className="absolute inset-0 bg-radial-gradient from-transparent to-black z-1" />
 
         <motion.div 
@@ -70,12 +72,12 @@ export default function LandingPage() {
                 <Sparkles className="w-3 h-3" /> The Gold Standard of Streaming
             </div>
             
-            <h1 className="text-4xl md:text-[11vw] font-black leading-[0.9] md:leading-[0.8] tracking-tighter uppercase italic mb-8 md:mb-12">
+            <h1 className="text-5xl md:text-[11vw] font-extrabold md:font-black leading-[0.9] md:leading-[0.8] tracking-tighter uppercase italic mb-8 md:mb-12 drop-shadow-2xl">
                 Pure <br /> 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-white to-orange-600">Emotion.</span>
             </h1>
 
-            <p className="text-sm md:text-xl text-zinc-500 max-w-2xl mx-auto font-bold uppercase tracking-widest leading-relaxed">
+            <p className="text-sm md:text-xl text-zinc-400 md:text-zinc-500 max-w-2xl mx-auto font-bold uppercase tracking-widest leading-relaxed">
                 Step beyond the interface. Experience a master-class in digital distribution. 
                 Your archive, perfectly preserved in the Hive.
             </p>
@@ -96,27 +98,27 @@ export default function LandingPage() {
       <section className="py-20 px-4 md:py-40 md:px-8 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
               <div className="space-y-6 md:space-y-10">
-                  <h2 className="text-4xl md:text-8xl font-black italic tracking-tighter uppercase leading-none">
+                  <h2 className="text-4xl md:text-8xl font-black italic tracking-tighter uppercase leading-none text-center md:text-left">
                     Choose <br /> Your <br /> <span className="text-yellow-500">Vibe.</span>
                   </h2>
-                  <p className="text-xl text-zinc-500 font-medium leading-relaxed max-w-md">
+                  <p className="text-base md:text-xl text-zinc-500 font-medium leading-relaxed max-w-md text-center md:text-left mx-auto md:mx-0">
                     From heart-pounding action to soul-stirring drama. The Hive curates the best of global entertainment for your unique taste.
                   </p>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
                       {['Action', 'Sci-Fi', 'Horror', 'Documentary', 'Anime'].map(genre => (
-                          <div key={genre} className="px-6 py-2 border border-white/10 rounded-full text-xs font-black uppercase tracking-widest hover:border-yellow-500 hover:text-yellow-500 cursor-pointer transition">
+                          <div key={genre} className="px-4 md:px-6 py-2 border border-white/10 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest hover:border-yellow-500 hover:text-yellow-500 cursor-pointer transition">
                               {genre}
                           </div>
                       ))}
                   </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4 pt-20">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                  <div className="space-y-3 md:space-y-4 pt-8 md:pt-20">
                     <GenreCard label="Thriller" color="bg-red-600" i={1} />
                     <GenreCard label="Adventure" color="bg-blue-600" i={2} />
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     <GenreCard label="Space" color="bg-indigo-600" i={3} />
                     <GenreCard label="Retro" color="bg-orange-600" i={4} />
                   </div>
@@ -196,11 +198,11 @@ function GenreCard({ label, color, i }: GenreCardProps) {
     return (
         <motion.div 
             whileHover={{ y: -10 }}
-            className={`aspect-square ${color} rounded-[3rem] p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden group cursor-pointer`}
+            className={`aspect-square ${color} rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden group cursor-pointer`}
         >
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="text-6xl font-black text-white/20">0{i}</span>
-            <h4 className="text-3xl font-black uppercase italic tracking-tighter leading-none">{label}</h4>
+            <span className="text-4xl md:text-6xl font-black text-white/20">0{i}</span>
+            <h4 className="text-xl md:text-3xl font-black uppercase italic tracking-tighter leading-none">{label}</h4>
         </motion.div>
     );
 }
@@ -213,9 +215,9 @@ interface FeatureBoxProps {
 
 function FeatureBox({ icon, title, desc }: FeatureBoxProps) {
     return (
-        <div className="p-16 border-r border-white/5 last:border-none flex flex-col items-center text-center gap-8 group hover:bg-white/[0.02] transition-colors">
+        <div className="p-10 md:p-16 border-b md:border-b-0 md:border-r border-white/5 last:border-none flex flex-col items-center text-center gap-6 md:gap-8 group hover:bg-white/[0.02] transition-colors">
             <div className="text-yellow-500 group-hover:scale-110 transition-transform duration-500">{icon}</div>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
                 <h3 className="text-2xl font-black uppercase italic tracking-tighter">{title}</h3>
                 <p className="text-zinc-500 text-sm font-medium leading-relaxed">{desc}</p>
             </div>

@@ -59,7 +59,7 @@ export default function UploadPage() {
     <div className="min-h-screen bg-[#141414]">
       <Navbar />
       
-      <div className="pt-32 pb-12 max-w-4xl mx-auto px-4">
+      <div className="pt-24 md:pt-32 pb-12 max-w-4xl mx-auto px-4">
         <div className="mb-10">
             <h1 className="text-4xl font-extrabold text-white mb-2">Creator Studio</h1>
             <p className="text-gray-400">Upload and publish new content to your global library.</p>
@@ -67,7 +67,7 @@ export default function UploadPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2 space-y-6">
-                <div className="bg-[#181818] p-8 rounded-2xl border border-gray-800 shadow-2xl">
+                <div className="bg-[#181818] p-6 md:p-8 rounded-2xl border border-gray-800 shadow-2xl">
                     {success ? (
                         <div className="flex flex-col items-center justify-center py-12 text-center">
                             <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6">
