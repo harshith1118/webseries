@@ -116,7 +116,7 @@ export default function LoginPage() {
 
                 {isLogin && (
                     <div className="flex justify-end px-1">
-                        <Link href="/forgot-password" size="sm" className="text-[10px] font-black text-zinc-500 hover:text-yellow-500 transition uppercase tracking-widest underline underline-offset-4">
+                        <Link href="/forgot-password" className="text-[10px] font-black text-zinc-500 hover:text-yellow-500 transition uppercase tracking-widest underline underline-offset-4">
                             Need help?
                         </Link>
                     </div>
